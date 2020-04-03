@@ -7,6 +7,8 @@ import child2 from '@/components/pages/child2'
 import child3 from '@/components/pages/child3'
 import menu from '@/components/pages/menu'
 import login from '@/components/pages/login'
+import dashboard from '@/components/dashboard'
+import products from '@/components/pages/products'
 Vue.use(Router)
 
 export default new Router({
@@ -20,6 +22,18 @@ export default new Router({
       name: 'HelloWorld',
       component: HelloWorld,
       meta: { requiresAuth: true }
+    }, {
+      path: '/admin',
+      name: 'dashboard',
+      component: dashboard,
+      children:[
+        {
+          path: 'products',
+          name: 'products',
+          component: products,
+          meta: { requiresAuth: true },
+        }
+      ]
     },{
       path: '/login',
       name: 'login',
@@ -43,7 +57,7 @@ export default new Router({
           component: child2
         }, {
           path: 'child3',
-          name: 'child/:id',
+          name: 'child3',
           component: child3
         }
       ]

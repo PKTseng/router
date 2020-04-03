@@ -11,13 +11,13 @@ export default {
     data(){
         return{}
     },
-    created() {
-      console.log(this.$route.params.id);
-      const id = this.$route.params.id
-      this.$http.get(`https://randomuser.me/api/?seed=${id}`).then((response) => {
-      console.log(response.data)
-    })
-  } 
+  //   created() {
+  //     console.log(this.$route.params.id);
+  //     const id = this.$route.params.id
+  //     this.$http.get(`https://randomuser.me/api/?seed=${id}`).then((response) => {
+  //     console.log(response.data)
+  //   })
+  // } 
 }
 </script>
 
